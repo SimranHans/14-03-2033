@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class JDBCDEMO {
 		public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			int choice;
+		    choice=sc.nextInt();
+			
 			JDBCDEMO obj=new JDBCDEMO();
 			String url="jdbc:mysql://localhost:3306/jdbcdemo";
 			try {
@@ -199,6 +203,36 @@ public class JDBCDEMO {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		    do
+	        {
+	            System.out.println("Enter 1 for inserting data ");
+	            System.out.println("Enter 2 for updating data");
+	            System.out.println("Enter 3 for deleting data");
+	           
+	            
+	            System.out.println("Choose any one : ");
+	            choice = sc.nextInt();
+	        }while(choice == 1 || choice == 2 || choice == 3);
+	        
+	        System.out.println("\n");
+	        
+	        switch(choice)
+	        {
+	            case '1' : insert();
+	                break;
+	            
+	            case '2' : update();
+	                break;
+	                
+	            case '3' : delete_data();
+	                break;
+	            default:
+	            	
+	            	System.out.println("wrong Input\n");
+	                break;
+	             
+	           
+	        }
 			
 		}
 		
